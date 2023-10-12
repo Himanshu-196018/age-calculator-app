@@ -2,9 +2,9 @@ import React from "react";
 
 const CalculatedAge = (props) => {
   const age = {
-    years: "--",
-    months: "--",
-    days: "--",
+    years: "- -",
+    months: "- -",
+    days: "- -",
   };
 
   return (

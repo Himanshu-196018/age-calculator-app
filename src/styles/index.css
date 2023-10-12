@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+/**********************************
+*   Resets and color variables
+**********************************/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --purple: hsl(259, 100%, 65%);
+  --light-red: hsl(0, 100%, 67%);
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-gray: hsl(0, 0%, 86%);
+  --smokey-gray: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+}
+
+.purple-txt {
+  color: var(--purple);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--light-gray);
+  font-family: Poppins, sans-serif;
+  font-size: 4rem;
+  min-height: 100vh;
+  min-width: 37.5rem;
+  color: var(--off-black);
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+main,
+#root {
+  width: calc(100vw - 2.5rem);
+  min-width: 32.5rem;
+  max-width: 84rem;
+}
+main {
+  background-color: var(--white);
+  padding: 5rem 2.5rem;
+  border-radius: 2.5rem 2.5rem 10rem;
+  height: 49rem;
+  display: grid;
+  align-content: space-between;
+}
+
+form {
+  display: flex;
+  gap: 1.5rem;
+  position: relative;
+  border-bottom: 2px solid var(--light-gray);
+  padding-bottom: 6rem;
+}
+
+label {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--smokey-gray);
+}
+
+input {
+  padding-left: 1rem;
+  font-size: 2rem;
+  width: 8.8rem;
+  height: 5.4rem;
+  display: block;
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  &::placeholder {
+    font-weight: 700;
+  }
+}
+
+button {
+  position: absolute;
+  background-color: var(--purple);
+  border: none;
+  border-radius: 50%;
+  bottom: -3.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6.4rem;
+  aspect-ratio: 1;
+  & img {
+    width: 2.4rem;
+  }
+}
+
+p {
+  font-size: 5.2rem;
+  font-weight: 800;
+  font-style: italic;
+  line-height: 1.15;
+}
+
+/*****************************************
+*   Desktop Design
+******************************************/
+@media only screen and (min-width: 500px) {
+  main {
+    height: 65rem;
+    border-bottom-right-radius: 20rem;
+    padding: 5.6rem;
+  }
+  form {
+    gap: 3rem;
+    padding-bottom: 4.6rem;
+  }
+  input {
+    width: 16rem;
+    height: 7.4rem;
+    margin-top: 0.4rem;
+    padding-left: 2.4rem;
+    font-size: 3rem;
+  }
+  button {
+    bottom: -4.8rem;
+    right: 0;
+    left: auto;
+    width: 9.6rem;
+    transform: translateX(0);
+    & img {
+      width: 4rem;
+    }
+  }
+  p {
+    font-size: 9.8rem;
+  }
+}
