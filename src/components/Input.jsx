@@ -1,14 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Input = ({
-  labelText,
-  placeholderText,
-  errorText,
-  inputValue,
-  handleChange,
-}) => {
+const Input = ({ labelText, placeholderText, errorText, error }) => {
+  const [inputValue, setInputValue] = useState("");
+
   return (
-    <label htmlFor={labelText}>
+    <label htmlFor={labelText} className={error ? "error" : ""}>
       {labelText}
       <input
         id={labelText}
@@ -16,9 +12,9 @@ const Input = ({
         type="number"
         placeholder={placeholderText}
         value={inputValue}
-        onChange={handleChange}
+        onChange={(e) => setInputValue(e.target.value)}
       />
-      <p>{errorText}</p>
+      <p>{error ? errorText : ""}</p>
     </label>
   );
 };

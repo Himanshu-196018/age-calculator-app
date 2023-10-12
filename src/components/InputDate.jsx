@@ -1,26 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import Input from "./Input";
 
 const InputDate = () => {
   const dateValue = [
-    ["day", "DD"],
-    ["month", "MM"],
-    ["year", "YYYY"],
+    ["day", "DD", "Must be a valid day"],
+    ["month", "MM", "Must be a valid month"],
+    ["year", "YYYY", "Must be in past"],
   ];
 
-  let [inputValue, setInputValue] = useState("");
-
-  const handleChange = () => {
-    console.log("hello");
-  };
-
-  return dateValue.map(([lt, pt]) => (
+  return dateValue.map(([lt, pt, et]) => (
     <Input
       key={pt}
       labelText={lt}
       placeholderText={pt}
-      inputValue={inputValue}
-      handleChange={() => handleChange}
+      errorText={et}
+      error={false}
     />
   ));
 };

@@ -56,7 +56,7 @@ main {
 
 form {
   display: flex;
-  gap: 1.5rem;
+  gap: 5vw;
   position: relative;
   border-bottom: 2px solid var(--light-gray);
   padding-bottom: 6rem;
@@ -67,11 +67,19 @@ label {
   text-transform: uppercase;
   font-weight: 700;
   color: var(--smokey-gray);
+
+  & p {
+    margin-top: 0.8rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: none;
+  }
 }
 
-input {
+label input {
   padding-left: 1rem;
   font-size: 2rem;
+  font-weight: 700;
   width: 8.8rem;
   height: 5.4rem;
   display: block;
@@ -80,6 +88,17 @@ input {
   &::placeholder {
     font-weight: 700;
   }
+  &:is(:focus, :hover) {
+    cursor: pointer;
+    outline: none;
+    border: 2px solid var(--purple);
+  }
+}
+/* hide buttons in input[number] */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 button {
@@ -95,6 +114,10 @@ button {
   & img {
     width: 2.4rem;
   }
+  &:is(:focus, :hover) {
+    cursor: pointer;
+    background-color: var(--off-black);
+  }
 }
 
 p {
@@ -104,12 +127,22 @@ p {
   line-height: 1.15;
 }
 
+/* error class */
+.error {
+  color: var(--light-red);
+
+  & input {
+    border-color: var(--light-red);
+  }
+}
+
 /*****************************************
 *   Desktop Design
 ******************************************/
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 600px) {
   main {
     height: 65rem;
+    min-width: 770px;
     border-bottom-right-radius: 20rem;
     padding: 5.6rem;
   }
@@ -117,7 +150,7 @@ p {
     gap: 3rem;
     padding-bottom: 4.6rem;
   }
-  input {
+  label input {
     width: 16rem;
     height: 7.4rem;
     margin-top: 0.4rem;
@@ -136,5 +169,8 @@ p {
   }
   p {
     font-size: 9.8rem;
+  }
+  label p {
+    font-size: 1.35rem;
   }
 }
