@@ -1,27 +1,16 @@
 import React from "react";
 
-const CalculatedAge = (props) => {
-  let age = {
-    years: "- -",
-    months: "- -",
-    days: "- -",
-  };
-
-  if (props.gotAge.length !== 0) {
-    age.years = props.gotAge[0];
-    age.months = props.gotAge[1];
-    age.days = props.gotAge[2];
-  }
+const CalculatedAge = ({ gotAge }) => {
   return (
     <div className="calc-age">
       <p>
-        <span className="purple-txt">{age.years}</span> years
+        <span className="purple-txt">{gotAge[0]}</span> years
       </p>
       <p>
-        <span className="purple-txt">{age.months}</span> months
+        <span className="purple-txt">{gotAge[1]}</span> months
       </p>
       <p>
-        <span className="purple-txt">{age.days}</span> days
+        <span className="purple-txt">{gotAge[2]}</span> days
       </p>
     </div>
   );

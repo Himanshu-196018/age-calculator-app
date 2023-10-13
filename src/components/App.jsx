@@ -10,12 +10,12 @@ const App = () => {
     month: { value: "", errorText: "" },
     year: { value: "", errorText: "" },
   });
-  let [age, setAge] = useState([]);
+  let [age, setAge] = useState(["- -", "- -", "- -"]);
   let [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validateDate(date)) {
+    if (validateDate(date, setDate)) {
       setError(false);
       setAge(calculate(date));
     } else {
