@@ -1,20 +1,21 @@
 import React from "react";
 import Input from "./Input";
 
-const InputDate = () => {
+const InputDate = ({ date, setDate, error }) => {
   const dateValue = [
-    ["day", "DD", "Must be a valid day"],
-    ["month", "MM", "Must be a valid month"],
-    ["year", "YYYY", "Must be in past"],
+    ["day", "DD"],
+    ["month", "MM"],
+    ["year", "YYYY"],
   ];
 
-  return dateValue.map(([lt, pt, et]) => (
+  return dateValue.map(([lt, pt]) => (
     <Input
       key={pt}
       labelText={lt}
       placeholderText={pt}
-      errorText={et}
-      error={false}
+      error={error}
+      date={date}
+      setDate={setDate}
     />
   ));
 };

@@ -1,12 +1,17 @@
 import React from "react";
 
 const CalculatedAge = (props) => {
-  const age = {
+  let age = {
     years: "- -",
     months: "- -",
     days: "- -",
   };
 
+  if (props.gotAge.length !== 0) {
+    age.years = props.gotAge[0];
+    age.months = props.gotAge[1];
+    age.days = props.gotAge[2];
+  }
   return (
     <div className="calc-age">
       <p>

@@ -1,8 +1,8 @@
 import React from "react";
 
-const Button = ({ type, handleClick }) => {
+const Button = ({ type, handleSubmit }) => {
   return (
-    <button type={type} onClick={() => handleClick}>
+    <button type={type} onClick={handleSubmit}>
       <img src="./images/icon-arrow.svg" alt="Icon Down Arrow" />
     </button>
   );

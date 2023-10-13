@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Input = ({ labelText, placeholderText, errorText, error }) => {
-  const [inputValue, setInputValue] = useState("");
+const Input = ({ labelText, placeholderText, error, date, setDate }) => {
+  const handleChange = (e) => {
+    setDate({
+      ...date,
+      [e.target.id]: { ...date[e.target.id], value: e.target.value },
+    });
+  };
 
   return (
     <label htmlFor={labelText} className={error ? "error" : ""}>
@@ -11,10 +16,9 @@ const Input = ({ labelText, placeholderText, errorText, error }) => {
         name={labelText}
         type="number"
         placeholder={placeholderText}
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        onChange={(e) => handleChange(e)}
       />
-      <p>{error ? errorText : ""}</p>
+      <p>{date[labelText].errorText}</p>
     </label>
   );
 };
