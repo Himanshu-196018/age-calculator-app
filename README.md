@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution](https://github.com/Himanshu-196018/age-calculator-app)
-- Live Site URL: [Demo/site](DEMO LINK)
+- Live Site URL: [Demo/site](https://age-calculator-app-himanshu-2301.netlify.app/)
 
 ## My process
 
