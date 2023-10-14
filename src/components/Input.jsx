@@ -1,6 +1,7 @@
 import React from "react";
 
 const Input = ({ labelText, placeholderText, error, date, setDate }) => {
+  // function to handle value change in input
   const handleChange = (e) => {
     setDate({
       ...date,

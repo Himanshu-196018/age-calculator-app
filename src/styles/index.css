@@ -27,6 +27,7 @@ html {
   font-size: 62.5%;
 }
 
+/* body default */
 body {
   background-color: var(--light-gray);
   font-family: Poppins, sans-serif;
@@ -39,6 +40,7 @@ body {
   align-content: center;
 }
 
+/* styling component for mobile design */
 main,
 #root {
   width: calc(100vw - 2.5rem);
